@@ -518,8 +518,62 @@ is_boring(rv_inst inst, size_t offset)
 
   switch (dec.op) {
   case rv_op_illegal:           /* can't use an illegal insn in ROP! */
+  /* TODO: another 30ish cases go here ... */
+  /* jump instructions */
   case rv_op_jal:               /* jal will perturb pc, not useful */
-    /* TODO: another 30ish cases go here ... */
+  case rv_op_jalr:
+
+  /* branch instructions */
+  case rv_op_beq:
+  case rv_op_bne:
+  case rv_op_blt:
+  case rv_op_bge:
+  case rv_op_bltu:
+  case rv_op_bgeu:
+
+  /* environment instructions */
+  case rv_op_ecall:
+  case rv_op_ebreak:
+
+  /* return instructions */
+  case rv_op_uret:
+  case rv_op_sret:
+  case rv_op_hret:
+  case rv_op_mret:
+  case rv_op_dret:
+
+  /* stalling instructions */
+  case rv_op_wfi:
+
+  /* compressed jump instructions */
+  case rv_op_c_jal:
+  case rv_op_c_j:
+  case rv_op_c_jr:
+  case rv_op_c_jalr:
+
+  /* compressed branch instructions */
+  case rv_op_c_beqz:
+  case rv_op_c_bnez:
+
+  /* compressed environment instructions */
+  case rv_op_c_ebreak:
+
+  /* more branch instructions */
+  case rv_op_beqz:
+  case rv_op_bnez:
+  case rv_op_blez:
+  case rv_op_bgez:
+  case rv_op_bltz:
+  case rv_op_bgtz:
+  case rv_op_ble:
+  case rv_op_bleu:
+  case rv_op_bgt:
+  case rv_op_bgtu:
+
+  /* more jump instructions */
+  case rv_op_j:
+  case rv_op_ret:
+  case rv_op_jr:
     return 1;	// boring.
 
   default:
