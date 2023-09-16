@@ -1,0 +1,9 @@
+                1x (e.g., @0xd9db4 in clntraw_create)	08 e0	sd a0,0(s0)
+              1x (e.g., @0xd9db6 in clntraw_create)	aa 60	ld ra,136(sp)
+            1x (e.g., @0xd9db8 in clntraw_create)	0a 64	ld s0,128(sp)
+          1x (e.g., @0xd9dba in clntraw_create)	e6 74	ld s1,120(sp)
+        1x (e.g., @0xd9dbc in clntraw_create)	a6 79	ld s3,104(sp)
+      2x (e.g., @0x31a22)	4a 85	mv a0,s2
+    3x (e.g., @0x31a24)	46 79	ld s2,112(sp)
+  63x (e.g., @0x2b6fe)	49 61	addi sp,sp,144
+4262x (e.g., @0x29e3c)	82 80	ret

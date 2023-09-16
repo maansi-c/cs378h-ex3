@@ -1,0 +1,6 @@
+          2x (e.g., @0xe06ac)	08 60	ld a0,0(s0)
+        2x (e.g., @0xe06ae)	ea 70	ld ra,184(sp)
+      4x (e.g., @0xacfa4 in fchmodat)	4a 74	ld s0,176(sp)
+    5x (e.g., @0x6af4c in pthread_cond_clockwait)	aa 74	ld s1,168(sp)
+  26x (e.g., @0x2cb62)	29 61	addi sp,sp,192
+4262x (e.g., @0x29e3c)	82 80	ret

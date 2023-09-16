@@ -602,8 +602,22 @@ disasm_back_from(size_t offset, struct insn_node *node)
   size_t inst_len;              /* ... and also this one */
 
   struct insn_node *child;      /* returned by maybe_add_node_child */
+  rv_decode dec_inst;        /* decode_inst fills this variable */
 
   /* TODO: implement BuildFrom from Figure 33! */
+  for (trylen = 2; trylen < 4; trylen += 2) {
+    // fetch + decode instruction
+    fetch_inst(libc+offset-trylen, &inst, &inst_len);
+    decode_inst(&dec_inst, rv64, offset-trylen, inst);
+    
+    // if instruction is valid
+    if (dec_inst.op != rv_op_illegal) {
+      child = maybe_add_node_child(node, inst, offset-trylen); // add to the parent node
+      if (is_boring(inst, offset-trylen) == 0){ // if insn isn't boring
+        disasm_back_from(offset-trylen, child); // recursive call
+      }
+    }
+  }
 }
 
 int

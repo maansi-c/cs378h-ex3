@@ -1,0 +1,40 @@
+load:
+          2x (e.g., @0xe06ac)	08 60	ld a0,0(s0)
+        2x (e.g., @0xe06ae)	ea 70	ld ra,184(sp)
+      4x (e.g., @0xacfa4 in fchmodat)	4a 74	ld s0,176(sp)
+    5x (e.g., @0x6af4c in pthread_cond_clockwait)	aa 74	ld s1,168(sp)
+  26x (e.g., @0x2cb62)	29 61	addi sp,sp,192
+4262x (e.g., @0x29e3c)	82 80	ret
+
+          1x (e.g., @0xadf4a in ttyname)	e6 60	ld ra,88(sp)
+        1x (e.g., @0xadf4c in ttyname)	46 64	ld s0,80(sp)
+      1x (e.g., @0xadf4e in ttyname)	88 60	ld a0,0(s1)
+    13x (e.g., @0x63b06)	a6 64	ld s1,72(sp)
+  131x (e.g., @0x2a656)	25 61	addi sp,sp,96
+4262x (e.g., @0x29e3c)	82 80	ret
+
+store:
+                          1x (e.g., @0xddf26 in clntunix_create)	88 e0	sd a0,0(s1)
+                        1x (e.g., @0xddf28 in clntunix_create)	aa 70	ld ra,168(sp)
+                      1x (e.g., @0xddf2a in clntunix_create)	0a 74	ld s0,160(sp)
+                    1x (e.g., @0xddf2c in clntunix_create)	4a 69	ld s2,144(sp)
+                  1x (e.g., @0xddf2e in clntunix_create)	aa 69	ld s3,136(sp)
+                1x (e.g., @0xddf30 in clntunix_create)	0a 6a	ld s4,128(sp)
+              1x (e.g., @0xddf32 in clntunix_create)	e6 7a	ld s5,120(sp)
+            1x (e.g., @0xddf34 in clntunix_create)	46 7b	ld s6,112(sp)
+          1x (e.g., @0xddf36 in clntunix_create)	a6 7b	ld s7,104(sp)
+        1x (e.g., @0xddf38 in clntunix_create)	06 7c	ld s8,96(sp)
+      3x (e.g., @0x9f56e)	26 85	mv a0,s1
+    3x (e.g., @0x9f570)	ea 64	ld s1,152(sp)
+  34x (e.g., @0x2d5ac)	4d 61	addi sp,sp,176
+4262x (e.g., @0x29e3c)	82 80	ret
+
+                1x (e.g., @0xd9db4 in clntraw_create)	08 e0	sd a0,0(s0)
+              1x (e.g., @0xd9db6 in clntraw_create)	aa 60	ld ra,136(sp)
+            1x (e.g., @0xd9db8 in clntraw_create)	0a 64	ld s0,128(sp)
+          1x (e.g., @0xd9dba in clntraw_create)	e6 74	ld s1,120(sp)
+        1x (e.g., @0xd9dbc in clntraw_create)	a6 79	ld s3,104(sp)
+      2x (e.g., @0x31a22)	4a 85	mv a0,s2
+    3x (e.g., @0x31a24)	46 79	ld s2,112(sp)
+  63x (e.g., @0x2b6fe)	49 61	addi sp,sp,144
+4262x (e.g., @0x29e3c)	82 80	ret
