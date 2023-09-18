@@ -531,19 +531,12 @@ is_boring(rv_inst inst, size_t offset)
   case rv_op_bltu:
   case rv_op_bgeu:
 
-  /* environment instructions */
-  case rv_op_ecall:
-  case rv_op_ebreak:
-
   /* return instructions */
   case rv_op_uret:
   case rv_op_sret:
   case rv_op_hret:
   case rv_op_mret:
   case rv_op_dret:
-
-  /* stalling instructions */
-  case rv_op_wfi:
 
   /* compressed jump instructions */
   case rv_op_c_jal:
@@ -554,9 +547,6 @@ is_boring(rv_inst inst, size_t offset)
   /* compressed branch instructions */
   case rv_op_c_beqz:
   case rv_op_c_bnez:
-
-  /* compressed environment instructions */
-  case rv_op_c_ebreak:
 
   /* more branch instructions */
   case rv_op_beqz:
@@ -572,7 +562,7 @@ is_boring(rv_inst inst, size_t offset)
 
   /* more jump instructions */
   case rv_op_j:
-  case rv_op_ret:
+  //case rv_op_ret:
   case rv_op_jr:
     return 1;	// boring.
 
