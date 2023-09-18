@@ -563,6 +563,7 @@ is_boring(rv_inst inst, size_t offset)
   /* more jump instructions */
   case rv_op_j:
   case rv_op_jr:
+  case rv_op_ret:
     return 1;	// boring.
 
   default:
